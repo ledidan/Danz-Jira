@@ -12,7 +12,9 @@ import {
 } from "@ant-design/icons";
 import { signUp } from "../../store/actions/auth";
 import { schemaSignup } from "../../services/auth";
+
 // import { schema } from "../../services/auth";
+
 import Background from "../../assets/images/login/jiraBackground.jpg";
 const Signup = (props) => {
   const dispatch = useDispatch();
