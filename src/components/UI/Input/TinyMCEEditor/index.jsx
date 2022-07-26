@@ -17,7 +17,7 @@ const TinyMCEEditor = ({ name, value, onEditorChange }) => {
         </div>
       )}
       <Editor
-        apiKey="gof6u0hypfiazxgjtu3s1sr4rzde9h8k4ooeqc7q2h3t7dpn"
+        apiKey="nrpi36979r4qkvdj6xscissomderf9ezwj3nv36mc16v0mit"
         init={{
           menubar: false,
           plugins: [

@@ -69,10 +69,7 @@ const Header = () => {
           </span>
         }
       >
-        <Menu.Item
-          key="projects"
-          className={`${classes["menu-item"]} h-10 py-2 px-5`}
-        >
+        <Menu.Item key="projects" className={`${classes["menu-item"]} h-10 py-2 px-5`}>
           <Link to="/projects">Projects</Link>
         </Menu.Item>
       </Menu.ItemGroup>
@@ -88,10 +85,7 @@ const Header = () => {
           </span>
         }
       >
-        <Menu.Item
-          key="profile"
-          className={`${classes["menu-item"]} h-10 py-2 px-5`}
-        >
+        <Menu.Item key="profile" className={`${classes["menu-item"]} h-10 py-2 px-5`}>
           <Link to="/my-profile">Profiles</Link>
         </Menu.Item>
       </Menu.ItemGroup>
@@ -147,9 +141,7 @@ const Header = () => {
             </div>
             <div
               className={`h-full flex items-center mr-1${
-                history.location.pathname.includes("/users")
-                  ? " " + classes.active
-                  : ""
+                history.location.pathname.includes("/users") ? " " + classes.active : ""
               }`}
             >
               <Dropdown overlay={usersMenu} trigger={["click"]}>
@@ -167,11 +159,7 @@ const Header = () => {
             </Button>
           </nav>
           <div className="flex items-center">
-            <Dropdown
-              overlay={settingsMenu}
-              trigger={["click"]}
-              className="mr-1"
-            >
+            <Dropdown overlay={settingsMenu} trigger={["click"]} className="mr-1">
               <Tooltip title="Settings">
                 <Button
                   className="border-0 shadow-none hover:bg-blue-200 focus:bg-blue-200 hover:text-blue-500 focus:text-blue-500"
@@ -181,10 +169,7 @@ const Header = () => {
               </Tooltip>
             </Dropdown>
             <Dropdown overlay={profileMenu} trigger={["click"]}>
-              <Tooltip
-                placement="bottomRight"
-                title="Your profile and settings"
-              >
+              <Tooltip placement="bottomRight" title="Your profile and settings">
                 <Button
                   shape="circle"
                   className="flex justify-center items-center border-0 shadow-none hover:bg-blue-200 focus:bg-blue-200 hover:text-blue-500 focus:text-blue-500"

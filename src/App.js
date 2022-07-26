@@ -48,12 +48,7 @@ const App = () => {
           redirectPath="/projects"
           layout={AuthLayout}
         />
-        <AuthRoute
-          path="/register"
-          exact
-          component={Signup}
-          redirectPath="/projects"
-        />
+        <AuthRoute path="/register" exact component={Signup} redirectPath="/projects" />
         <PrivateRoute
           path="/projects"
           exact

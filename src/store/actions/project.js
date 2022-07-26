@@ -37,9 +37,7 @@ export const createProjectAuthorize = (data, callback) => {
       }
     } catch (err) {
       console.log(err);
-      dispatch(
-        createAction(actionType.SET_PROJECT_ERROR, err.response.data.content)
-      );
+      dispatch(createAction(actionType.SET_PROJECT_ERROR, err.response.data.content));
     }
   };
 };
@@ -74,9 +72,7 @@ export const assignUserToProject = (data, callback) => {
     } catch (err) {
       console.log(err);
       if (err.response.data.statusCode === 403) {
-        dispatch(
-          createAction(actionType.SET_PROJECT_ERROR, err.response.data.content)
-        );
+        dispatch(createAction(actionType.SET_PROJECT_ERROR, err.response.data.content));
       }
     }
   };
@@ -94,9 +90,7 @@ export const removeUserFromProject = (data, callback) => {
     } catch (err) {
       console.log(err);
       if (err.response.data.statusCode === 403) {
-        dispatch(
-          createAction(actionType.SET_PROJECT_ERROR, err.response.data.content)
-        );
+        dispatch(createAction(actionType.SET_PROJECT_ERROR, err.response.data.content));
       }
     }
   };
@@ -131,9 +125,7 @@ export const fetchProjectDetail = (projectId, callback) => {
       console.log(err);
 
       if (err.response.data.statusCode === 404) {
-        dispatch(
-          createAction(actionType.SET_PROJECT_ERROR, err.response.data.content)
-        );
+        dispatch(createAction(actionType.SET_PROJECT_ERROR, err.response.data.content));
       }
     }
   };

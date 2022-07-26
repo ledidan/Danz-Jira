@@ -1,14 +1,16 @@
-# Bootcamp09 - Jira Clone Project
+# FE70 - Jira Clone Project
+
+### [Di Dan](https://github.com/ledidan)
+
+### [Facebook](https://www.facebook.com/ledidan)
 
 ## Task assignment
-### [Trang Le](https://github.com/LadyCodes)
+
 - Log in page
 - Sign up page
 - Manage user page
 - Create task modal
 - Edit project page
-
-### [Tien Do](https://github.com/dothanhtien)
 - Manage project page
 - New project page
 - Manage task page
@@ -17,6 +19,7 @@
 - My profile page
 
 ## Installed Packages
+
 - UI: antd, tailwindcss
 - Routing: react-router-dom
 - Store: redux, react-redux, redux-thunk
@@ -24,6 +27,7 @@
 - Others: react-beautiful-dnd (Drag and Drop), sweetalert2 (Alert), @tinymce/tinymce-react (Editor), html-react-parser (Parse HTML), react-responsive (Responsive)
 
 ## Folder Structure
+
 ```
 ./src
 |___assets
@@ -54,4 +58,5 @@
 |   |___index.js
 |___utils
 |___views
+
 ```

@@ -1,16 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Avatar,
-  Button,
-  Col,
-  Form,
-  Input,
-  List,
-  Modal,
-  Row,
-  Typography,
-} from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { Avatar, Button, Col, Form, Input, List, Modal, Row, Typography } from "antd";
+import { DeleteOutlined, PlusCircleFilled, SearchOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createAction } from "../../../store/actions";
@@ -158,14 +148,14 @@ const AddMembersModal = (props) => {
               <Button
                 key="projects"
                 onClick={handleGoToProjectsButtonClick}
-                className="h-8 bg-blue-700 hover:bg-blue-600 focus:bg-blue-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
+                className="h-10 bg-blue-700 hover:bg-blue-600 focus:bg-blue-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
               >
                 Go to projects
               </Button>,
               <Button
                 key="newProject"
                 onClick={props.onCancel}
-                className="h-8 bg-blue-700 hover:bg-blue-600 focus:bg-blue-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
+                className="h-10 bg-green-700 hover:bg-green-600 focus:bg-green-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
               >
                 Create new project
               </Button>,
@@ -211,16 +201,14 @@ const AddMembersModal = (props) => {
                 <List.Item.Meta
                   avatar={<Avatar src={item.avatar} />}
                   title={<a href="https://ant.design">{item.name}</a>}
-                  description={
-                    <div className="text-xs">User ID: {item.userId}</div>
-                  }
+                  description={<div className="text-xs">User ID: {item.userId}</div>}
                 />
                 <div>
                   <Button
                     onClick={addMemberToProject(item.userId)}
-                    className="flex justify-center items-center h-8 bg-blue-700 hover:bg-blue-600 focus:bg-blue-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
+                    className="flex justify-center items-center h-8 bg-blue-500 hover:bg-blue-600 outline-blue-500 focus:bg-blue-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
                   >
-                    Add
+                    <PlusCircleFilled /> Add
                   </Button>
                 </div>
               </List.Item>
@@ -245,16 +233,14 @@ const AddMembersModal = (props) => {
                 <List.Item.Meta
                   avatar={<Avatar src={item.avatar} />}
                   title={<a href="https://ant.design">{item.name}</a>}
-                  description={
-                    <div className="text-xs">User ID: {item.userId}</div>
-                  }
+                  description={<div className="text-xs">User ID: {item.userId}</div>}
                 />
                 <div>
                   <Button
                     onClick={removeMemberFromProject(item.userId)}
                     className="flex justify-center items-center h-8 bg-red-700 hover:bg-red-600 focus:bg-red-600 text-white hover:text-white focus:text-white font-medium py-1.5 px-3 rounded border-0"
                   >
-                    Remove
+                    <DeleteOutlined /> Remove
                   </Button>
                 </div>
               </List.Item>

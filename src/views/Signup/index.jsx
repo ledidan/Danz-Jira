@@ -7,14 +7,13 @@ import { useDispatch } from "react-redux";
 import {
   UserOutlined,
   LockOutlined,
-  TwitterOutlined,
   PhoneOutlined,
   MailOutlined,
 } from "@ant-design/icons";
 import { signUp } from "../../store/actions/auth";
 import { schemaSignup } from "../../services/auth";
 // import { schema } from "../../services/auth";
-
+import Background from "../../assets/images/login/jiraBackground.jpg";
 const Signup = (props) => {
   const dispatch = useDispatch();
 
@@ -48,137 +47,122 @@ const Signup = (props) => {
       })
     );
   };
-
+  const backgroundJira = {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
   return (
-    <form
-      onSubmit={handleRegister}
-      className="container"
-      style={{ height: window.innerHeight }}
-    >
-      <div
-        className="flex flex-col justify-center items-center"
+    <div className="w-auto" style={backgroundJira}>
+      <form
+        onSubmit={handleRegister}
+        className="container"
         style={{ height: window.innerHeight }}
       >
-        <h3 className="text-center" style={{ fontWeight: 300, fontSize: 35 }}>
-          {" "}
-          Register CyberBugs
-        </h3>
-
-        {/* name*/}
-        <div className="mt-3">
-          <Input
-            name="name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            size="large"
-            placeholder="name"
-            style={{ minWidth: 300, borderRadius: 5 }}
-            prefix={<UserOutlined />}
-          />
-        </div>
-        {formik.touched.name && (
-          <p className="text-red-500">{formik.errors.name}</p>
-        )}
-
-        {/* email*/}
-        <div className="mt-3">
-          <Input
-            name="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            size="large"
-            placeholder="email"
-            style={{ minWidth: 300, borderRadius: 5 }}
-            prefix={<MailOutlined />}
-          />
-        </div>
-        {formik.touched.email && (
-          <p className="text-red-500">{formik.errors.email}</p>
-        )}
-
-        {/* phone */}
-        <div className="mt-3">
-          <Input
-            name="phoneNumber"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            size="large"
-            placeholder="phone number"
-            style={{ minWidth: 300, borderRadius: 5 }}
-            prefix={<PhoneOutlined />}
-          />
-        </div>
-        {formik.touched.phoneNumber && (
-          <p className="text-red-500">{formik.errors.phoneNumber}</p>
-        )}
-
-        {/* password */}
-        <div className="mt-3">
-          <Input
-            name="password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            type="password"
-            size="large"
-            placeholder="password"
-            style={{ minWidth: 300, borderRadius: 5 }}
-            prefix={<LockOutlined />}
-          />
-        </div>
-        {<p className="text-red-500">{formik.errors.password}</p>}
-
-        {/*  signup btn */}
-        <Button
-          htmlType="submit"
-          size="large"
-          style={{
-            minWidth: 300,
-            backgroundColor: "rgb(102,117,223)",
-            color: "#fff",
-            borderRadius: 5,
-          }}
-          className="mt-5"
+        <div
+          className="flex flex-col justify-center items-center"
+          style={{ height: window.innerHeight }}
         >
-          Register
-        </Button>
+          <div className="flex text-center flex-col py-20 px-10 shadow shadow-lg shadow-slate-500 bg-white rounded-md">
+            <div className="mb-5">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/82/Jira_%28Software%29_logo.svg"
+                width={300}
+                alt="..."
+              />
+            </div>
+            <h3 className="text-center text-2xl">Sign up to continue to:</h3>
+            <p className="font-bold text-lg">Login Page</p>
 
-        <p>
-          Already have an account?
-          <NavLink to="/login" className="text-blue-500">
-            {" "}
-            Login now
-          </NavLink>
-        </p>
+            {/* name*/}
+            <div className="flex mt-3">
+              <Input
+                name="name"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                size="large"
+                placeholder="name"
+                style={{ minWidth: 300 }}
+                prefix={<UserOutlined />}
+              />
+            </div>
+            {formik.touched.name && (
+              <p className="text-red-500 text-left">{formik.errors.name}</p>
+            )}
 
-        {/* fb btn*/}
-        <div className="social mt-3 flex">
-          <Button
-            style={{
-              backgroundColor: "rgb(59,89,152)",
-              height: 42,
-              width: 42,
-              marginRight: 5,
-            }}
-            shape="circle"
-          >
-            <span
-              className="font-bold flex justify-center"
-              style={{ color: "#fff", fontSize: 20 }}
+            {/* email*/}
+            <div className="flex mt-3">
+              <Input
+                name="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                size="large"
+                placeholder="email"
+                style={{ minWidth: 300 }}
+                prefix={<MailOutlined />}
+              />
+            </div>
+            {formik.touched.email && (
+              <p className="text-red-500 text-left">{formik.errors.email}</p>
+            )}
+
+            {/* phone */}
+            <div className="mt-3">
+              <Input
+                name="phoneNumber"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                size="large"
+                placeholder="phone number"
+                style={{ minWidth: 300 }}
+                prefix={<PhoneOutlined />}
+              />
+            </div>
+            {formik.touched.phoneNumber && (
+              <p className="text-red-500 text-left">{formik.errors.phoneNumber}</p>
+            )}
+
+            {/* password */}
+            <div className="flex mt-3">
+              <Input
+                name="password"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                type="password"
+                size="large"
+                placeholder="password"
+                style={{ minWidth: 300 }}
+                prefix={<LockOutlined />}
+              />
+            </div>
+            {<p className="text-red-500 text-left">{formik.errors.password}</p>}
+
+            {/*  signup btn */}
+            <Button
+              htmlType="submit"
+              size="large"
+              type="primary"
+              style={{
+                minWidth: 300,
+              }}
+              className="mt-3 text-white"
             >
-              f
-            </span>
-          </Button>
-
-          {/* twitter btn */}
-          <Button
-            type="primary"
-            shape="circle"
-            icon={<TwitterOutlined />}
-            style={{ height: 41, width: 41 }}
-          ></Button>
+              Sign Up
+            </Button>
+            <small className="my-3">OR</small>
+            <p>
+              Already have an account?
+              <NavLink to="/login" className="text-blue-500">
+                {" "}
+                Login
+              </NavLink>
+            </p>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

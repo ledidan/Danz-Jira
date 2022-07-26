@@ -70,7 +70,7 @@ const FormCreateTask = (props) => {
         description: false,
       });
 
-      history.push("/projects");
+      history.push(`/projects`);
     },
   });
 
@@ -267,10 +267,7 @@ const FormCreateTask = (props) => {
         <div className="w-full">
           <Slider
             value={sliderMode ? timeTracking.timeTrackingSpent : 0}
-            max={
-              Number(timeTrackingRemaining) +
-              Number(timeTracking.timeTrackingSpent)
-            }
+            max={Number(timeTrackingRemaining) + Number(timeTracking.timeTrackingSpent)}
             className="mt-5"
           />
 
