@@ -155,7 +155,7 @@ const Signup = (props) => {
             </Button>
             <small className="my-3">OR</small>
             <p>
-              Already have an account?
+              Already have an account ?
               <NavLink to="/login" className="text-blue-500">
                 {" "}
                 Login
