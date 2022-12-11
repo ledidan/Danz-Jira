@@ -11,15 +11,15 @@ export const schemaSignup = yup.object().shape(schemaContent);
 
 class AuthService {
   logIn(data) {
-    return axiosClient.post("/api/Users/signin", data);
+    return axiosClient.post("/users/signin", data);
   }
 
   signUp(data) {
-    return axiosClient.post("/api/Users/signup", data);
+    return axiosClient.post("/users/signup", data);
   }
 
   fetchMe(params) {
-    return axiosClient.get("/api/Users/getUser", { params });
+    return axiosClient.get("/users/getUser", { params });
   }
 }
 

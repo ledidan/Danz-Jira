@@ -9,8 +9,8 @@ import {
 const axiosClient = axios.create({
   baseURL: BASE_URL,
   headers: {
-    "content-type": "application/json",
     TokenCybersoft: TOKEN_CYBERSOFT,
+    Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
   },
 });
 
@@ -19,7 +19,7 @@ axiosClient.interceptors.request.use(
   (config) => {
     // Do something before request is sent
     const accessToken = localStorage.getItem(ACCESS_TOKEN);
-    
+
     if (accessToken) {
       config.headers.Authorization = "Bearer " + accessToken;
     }
