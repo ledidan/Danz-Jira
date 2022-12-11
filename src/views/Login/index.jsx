@@ -14,7 +14,7 @@ const Login = (props) => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
+      passWord: "",
     },
     validationSchema: schema,
     validationOnMount: true,
@@ -25,7 +25,7 @@ const Login = (props) => {
 
     formik.setTouched({
       email: true,
-      password: true,
+      passWord: true,
     });
 
     if (!formik.isValid) {
@@ -65,7 +65,10 @@ const Login = (props) => {
                 alt="..."
               />
             </div>
-            <h3 className="text-center" style={{ fontWeight: 300, fontSize: 35 }}>
+            <h3
+              className="text-center"
+              style={{ fontWeight: 300, fontSize: 35 }}
+            >
               {" "}
               Login to continute to:
             </h3>
@@ -89,17 +92,17 @@ const Login = (props) => {
             {/* password */}
             <div className="flex mt-3">
               <Input
-                name="password"
+                name="passWord"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                type="password"
+                type="passWord"
                 size="large"
                 placeholder="password"
                 style={{ minWidth: 300, width: "100%" }}
                 prefix={<LockOutlined />}
               />
             </div>
-            {<p className="text-red-500 text-left">{formik.errors.password}</p>}
+            {<p className="text-red-500 text-left">{formik.errors.passWord}</p>}
 
             {/*  login btn */}
             <Button

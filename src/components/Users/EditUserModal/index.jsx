@@ -16,8 +16,8 @@ const EditUserModal = ({ visible, onCancel, user }) => {
       email,
       name,
       phoneNumber,
-      password: "",
-      passwordConfirmation: "",
+      passWord: "",
+      passWordConfirmation: "",
     },
     validateOnMount: true,
     validationSchema: editUserSchema,
@@ -28,8 +28,8 @@ const EditUserModal = ({ visible, onCancel, user }) => {
       email: true,
       name: true,
       phoneNumber: true,
-      password: true,
-      passwordConfirmation: true,
+      passWord: true,
+      passWordConfirmation: true,
     });
 
     if (!formik.dirty) return;
@@ -143,15 +143,15 @@ const EditUserModal = ({ visible, onCancel, user }) => {
               Password <span className="text-red-700">*</span>
             </Typography.Text>
           }
-          help={formik.touched.password && formik.errors.password}
+          help={formik.touched.passWord && formik.errors.passWord}
           validateStatus={
-            formik.touched.password && !!formik.errors.password ? "error" : ""
+            formik.touched.passWord && !!formik.errors.passWord ? "error" : ""
           }
         >
           <Input
-            type="password"
-            name="password"
-            value={formik.values.password}
+            type="passWord"
+            name="passWord"
+            value={formik.values.passWord}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
@@ -164,20 +164,20 @@ const EditUserModal = ({ visible, onCancel, user }) => {
             </Typography.Text>
           }
           help={
-            formik.touched.passwordConfirmation &&
-            formik.errors.passwordConfirmation
+            formik.touched.passWordConfirmation &&
+            formik.errors.passWordConfirmation
           }
           validateStatus={
-            formik.touched.passwordConfirmation &&
-            !!formik.errors.passwordConfirmation
+            formik.touched.passWordConfirmation &&
+            !!formik.errors.passWordConfirmation
               ? "error"
               : ""
           }
         >
           <Input
-            type="password"
-            name="passwordConfirmation"
-            value={formik.values.passwordConfirmation}
+            type="passWord"
+            name="passWordConfirmation"
+            value={formik.values.passWordConfirmation}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />

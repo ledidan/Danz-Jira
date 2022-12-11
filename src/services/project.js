@@ -12,40 +12,37 @@ export const createProjectSchema = yup.object().shape({
 
 class ProjectService {
   fetchAllProjects(params) {
-    return axiosClient.get("api/Project/getAllProject", { params });
+    return axiosClient.get("/project/getAllProject", { params });
   }
 
   fetchAllProjectCategories() {
-    return axiosClient.get("/api/ProjectCategory");
+    return axiosClient.get("/projectCategory");
   }
 
   createProjectAuthorize(data) {
-    return axiosClient.post("/api/Project/createProjectAuthorize", data);
+    return axiosClient.post("/project/createProjectAuthorize", data);
   }
 
   updateProject(data) {
-    return axiosClient.put(
-      `/api/Project/updateProject?projectId=${data.id}`,
-      data
-    );
+    return axiosClient.put(`/project/updateProject?projectId=${data.id}`, data);
   }
 
   fetchUsersByProject(projectId) {
-    return axiosClient.get("/api/Users/getUserByProjectId", {
+    return axiosClient.get("/users/getUserByProjectId", {
       params: { idProject: projectId },
     });
   }
 
   assignUserToProject(data) {
-    return axiosClient.post("/api/Project/assignUserProject", data);
+    return axiosClient.post("/project/assignUserProject", data);
   }
 
   removeUserFromProject(data) {
-    return axiosClient.post("/api/Project/removeUserFromProject", data);
+    return axiosClient.post("/project/removeUserFromProject", data);
   }
 
   deleteProject(projectId) {
-    return axiosClient.delete("/api/Project/deleteProject", {
+    return axiosClient.delete("/project/deleteProject", {
       params: {
         projectId,
       },
@@ -53,7 +50,7 @@ class ProjectService {
   }
 
   fetchProjectDetail(projectId) {
-    return axiosClient.get("/api/Project/getProjectDetail", {
+    return axiosClient.get("/project/getProjectDetail", {
       params: { id: projectId },
     });
   }
