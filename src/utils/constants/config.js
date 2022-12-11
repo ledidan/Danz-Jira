@@ -1,5 +1,6 @@
 export const APP_NAME = "Jira";
-export const BASE_URL = "https://jiranew.cybersoft.edu.vn";
-export const ACCESS_TOKEN = "accessToken";
+export const BASE_URL = "https://jira-nodejs.onrender.com";
+export const USER_LOGIN = "USER_LOGIN";
+export const ACCESS_TOKEN = "Authorization";
 export const TOKEN_CYBERSOFT =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJGcm9udCBFbmQgNzAiLCJIZXRIYW5TdHJpbmciOiIxNC8xMC8yMDIyIiwiSGV0SGFuVGltZSI6IjE2NjU3MDU2MDAwMDAiLCJuYmYiOjE2Mzc0Mjc2MDAsImV4cCI6MTY2NTg1MzIwMH0.RAzH9H37ZyQ8ZT6A62fw3_bDfJOCq0A9vz08qT262EU";
+  "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJoeUBnbWFpbC5jb20iLCJuYmYiOjE2NDk2ODgxNDksImV4cCI6MTY0OTY5MTc0OX0.FHo19JfyYXRLnmPyKKGveHNYITPXUr3Ar_7qiPw3vic";

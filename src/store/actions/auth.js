@@ -1,7 +1,7 @@
 import swal from "sweetalert";
 import { createAction } from ".";
 import { authService } from "../../services";
-import { ACCESS_TOKEN } from "../../utils/constants/config";
+import { ACCESS_TOKEN, USER_LOGIN } from "../../utils/constants/config";
 import { actionType } from "./type";
 
 export const logIn = (values, callback) => {
@@ -13,8 +13,8 @@ export const logIn = (values, callback) => {
       dispatch(createAction(actionType.SET_ME, res.data.content));
 
       localStorage.setItem(ACCESS_TOKEN, res.data.content.accessToken);
-      localStorage.setItem("loginInfo", JSON.stringify(res.data.content));
-
+      localStorage.setItem(USER_LOGIN, JSON.stringify(res.data.content));
+      console.log(res.data);
       if (callback) {
         callback();
       }
@@ -45,13 +45,13 @@ export const fetchMe = async (dispatch) => {
   try {
     const res = await authService.fetchMe();
 
-    const loginInfo = JSON.parse(localStorage.getItem("loginInfo"));
+    const loginInfo = JSON.parse(localStorage.getItem(USER_LOGIN));
 
     const me = res.data.content.find((user) => user.userId === loginInfo.id);
 
     if (me === undefined) {
       localStorage.removeItem(ACCESS_TOKEN);
-      localStorage.removeItem("loginInfo");
+      localStorage.removeItem(USER_LOGIN);
       window.location.reload();
       return;
     }

@@ -19,21 +19,19 @@ export const editUserSchema = yup.object().shape({
 
 class UserService {
   fetchAllUsers(params) {
-    return axiosClient.get("/api/Users/getUser", { params });
+    return axiosClient.get("/users/getUser", { params });
   }
 
   deleterUser(id) {
-    return axiosClient.delete(`api/Users/deleteUser?id=${id}`);
+    return axiosClient.delete(`/users/deleteUser?id=${id}`);
   }
 
   getMembersByProjectId(projectId) {
-    return axiosClient.get(
-      `/api/Users/getUserByProjectId?idProject=${projectId}`
-    );
+    return axiosClient.get(`/users/getUserByProjectId?idProject=${projectId}`);
   }
 
   updateUser(data) {
-    return axiosClient.put("/api/Users/editUser", data);
+    return axiosClient.put("/users/editUser", data);
   }
 }
 

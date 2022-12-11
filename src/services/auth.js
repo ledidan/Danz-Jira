@@ -4,22 +4,22 @@ import { schemaContent } from "./schemaContent";
 
 export const schema = yup.object().shape({
   email: schemaContent.email,
-  password: schemaContent.password,
+  passWord: schemaContent.password,
 });
 
 export const schemaSignup = yup.object().shape(schemaContent);
 
 class AuthService {
-  logIn(data) {
-    return axiosClient.post("/api/Users/signin", data);
+  logIn(userLogin) {
+    return axiosClient.post("/users/signin", userLogin);
   }
 
-  signUp(data) {
-    return axiosClient.post("/api/Users/signup", data);
+  signUp(userSignup) {
+    return axiosClient.post("/users/signup", userSignup);
   }
 
   fetchMe(params) {
-    return axiosClient.get("/api/Users/getUser", { params });
+    return axiosClient.get("users/getUser", { params });
   }
 }
 

@@ -1,10 +1,8 @@
-
 import axiosClient from "./axiosClient";
 
 class StatusService {
- 
   getStatus() {
-    return axiosClient.get(`/api/Status/getAll`);
+    return axiosClient.get(`/status/getAll`);
   }
 }
 
