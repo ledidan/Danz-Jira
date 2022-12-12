@@ -4,6 +4,8 @@
 
 ### [Facebook](https://www.facebook.com/ledidan)
 
+![Jira Clone](https://res.cloudinary.com/dfaejacdn/image/upload/v1670817035/Screenshot_2022-12-10_at_14.39.06_nxsu3t.png)
+
 ### Task assignment
 
 - Log in page
