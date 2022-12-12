@@ -13,7 +13,7 @@ import { createProjectSchema } from "../../../services/project";
 import { createAction } from "../../../store/actions";
 import { actionType } from "../../../store/actions/type";
 
-const NewProject = (props) => {
+const NewProject = () => {
   const dispatch = useDispatch();
   const projectCategories = useSelector(
     (state) => state.project.projectCategories

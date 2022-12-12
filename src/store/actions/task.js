@@ -122,12 +122,13 @@ export const updateDescription = (data, callback) => {
     } catch (err) {
       console.log(err);
       if (
-        err.response.data.statusCode === 404 &&
-        err.response.data.content === "user is not assign!"
+        err.response.data.statusCode === 400 &&
+        err.response.data.content === "User is not assign!"
       ) {
         dispatch(
           createAction(actionType.SET_TASK_ERROR, err.response.data.content)
         );
+        notifitying("warning", "You aren't allowed to edit the task !!");
       }
     }
   };
@@ -145,12 +146,13 @@ export const updatePriority = (data, callback) => {
     } catch (err) {
       console.log(err);
       if (
-        err.response.data.statusCode === 404 &&
-        err.response.data.content === "user is not assign!"
+        err.response.data.statusCode === 400 &&
+        err.response.data.content === "User is not assign!"
       ) {
         dispatch(
           createAction(actionType.SET_TASK_ERROR, err.response.data.content)
         );
+        notifitying("warning", "You aren't allowed to edit the task !!");
       }
     }
   };
@@ -195,13 +197,15 @@ export const updateEstimate = (data, callback) => {
       }
     } catch (err) {
       console.log(err);
+
       if (
-        err.response.data.statusCode === 404 &&
-        err.response.data.content === "user is not assign!"
+        err.response.data.statusCode === 400 &&
+        err.response.data.content === "User is not assign!"
       ) {
         dispatch(
           createAction(actionType.SET_TASK_ERROR, err.response.data.content)
         );
+        notifitying("warning", "You aren't allowed to edit the task !!");
       }
     }
   };
@@ -219,12 +223,13 @@ export const updateTimeTracking = (data, callback) => {
     } catch (err) {
       console.log(err);
       if (
-        err.response.data.statusCode === 404 &&
-        err.response.data.content === "user is not assign!"
+        err.response.data.statusCode === 400 &&
+        err.response.data.content === "User is not assign!"
       ) {
         dispatch(
           createAction(actionType.SET_TASK_ERROR, err.response.data.content)
         );
+        notifitying("warning", "You aren't allowed to edit the task !!");
       }
     }
   };

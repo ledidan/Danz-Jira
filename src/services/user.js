@@ -7,14 +7,14 @@ export const editUserSchema = yup.object().shape({
   phoneNumber: yup
     .string()
     .matches(/^[0-9]+$/, "Phone number must contain numbers only"),
-  password: yup
+  passWord: yup
     .string()
     .required("Password is required")
     .min(6, "Password must be at least 6 characters long"),
   passwordConfirmation: yup
     .string()
     .required("Password confirmation is required")
-    .oneOf([yup.ref("password")], "Password confirmation does not match"),
+    .oneOf([yup.ref("passWord")], "Password confirmation does not match"),
 });
 
 class UserService {

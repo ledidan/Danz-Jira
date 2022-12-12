@@ -18,7 +18,7 @@ const MyProfile = () => {
       email: me?.email,
       name: me?.name,
       phoneNumber: me?.phoneNumber,
-      password: "",
+      passWord: "",
       passwordConfirmation: "",
     },
     validateOnMount: true,
@@ -30,7 +30,7 @@ const MyProfile = () => {
       email: true,
       name: true,
       phoneNumber: true,
-      password: true,
+      passWord: true,
       passwordConfirmation: true,
     });
 
@@ -56,7 +56,11 @@ const MyProfile = () => {
   return (
     <div style={{ maxWidth: 980 }} className="mx-auto">
       <Row>
-        <Col xs={{ span: 24 }} md={{ span: 8 }} className="mb-6 text-center md:text-left">
+        <Col
+          xs={{ span: 24 }}
+          md={{ span: 8 }}
+          className="mb-6 text-center md:text-left"
+        >
           <Avatar
             size={{ xs: 200, sm: 200, md: 200, lg: 200, xl: 240, xxl: 260 }}
             src={me?.avatar}
@@ -106,7 +110,9 @@ const MyProfile = () => {
                 </Typography.Text>
               }
               help={formik.touched.name && formik.errors.name}
-              validateStatus={formik.touched.name && !!formik.errors.name ? "error" : ""}
+              validateStatus={
+                formik.touched.name && !!formik.errors.name ? "error" : ""
+              }
             >
               <Input
                 name="name"
@@ -120,7 +126,9 @@ const MyProfile = () => {
               label={<Typography.Text strong>Phone number</Typography.Text>}
               help={formik.touched.phoneNumber && formik.errors.phoneNumber}
               validateStatus={
-                formik.touched.phoneNumber && !!formik.errors.phoneNumber ? "error" : ""
+                formik.touched.phoneNumber && !!formik.errors.phoneNumber
+                  ? "error"
+                  : ""
               }
             >
               <Input
@@ -139,12 +147,14 @@ const MyProfile = () => {
               }
               help={formik.touched.password && formik.errors.password}
               validateStatus={
-                formik.touched.password && !!formik.errors.password ? "error" : ""
+                formik.touched.password && !!formik.errors.password
+                  ? "error"
+                  : ""
               }
             >
               <Input
-                type="password"
-                name="password"
+                type="passWord"
+                name="passWord"
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -158,7 +168,8 @@ const MyProfile = () => {
                 </Typography.Text>
               }
               help={
-                formik.touched.passwordConfirmation && formik.errors.passwordConfirmation
+                formik.touched.passwordConfirmation &&
+                formik.errors.passwordConfirmation
               }
               validateStatus={
                 formik.touched.passwordConfirmation &&
@@ -187,7 +198,7 @@ const MyProfile = () => {
                 onClick={() => formik.resetForm()}
                 className="hover:bg-gray-200 focus:bg-gray-200 text-gray-700 hover:text-gray-700 focus:text-gray-700 font-semibold border-transparent hover:border-gray-200 focus:border-gray-200 rounded shadow-none"
               >
-                Cancel
+                Reset
               </Button>
             </Form.Item>
           </Form>

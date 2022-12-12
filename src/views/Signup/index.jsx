@@ -22,7 +22,7 @@ const Signup = (props) => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
+      passWord: "",
       name: "",
       phoneNumber: "",
     },
@@ -35,7 +35,7 @@ const Signup = (props) => {
 
     formik.setTouched({
       email: true,
-      password: true,
+      passWord: true,
     });
 
     if (!formik.isValid) {
@@ -123,16 +123,18 @@ const Signup = (props) => {
               />
             </div>
             {formik.touched.phoneNumber && (
-              <p className="text-red-500 text-left">{formik.errors.phoneNumber}</p>
+              <p className="text-red-500 text-left">
+                {formik.errors.phoneNumber}
+              </p>
             )}
 
             {/* password */}
             <div className="flex mt-3">
               <Input
-                name="password"
+                name="passWord"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                type="password"
+                type="passWord"
                 size="large"
                 placeholder="password"
                 style={{ minWidth: 300 }}

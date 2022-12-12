@@ -111,7 +111,6 @@ const Login = (props) => {
               type="primary"
               style={{
                 minWidth: 300,
-                width: "20%",
               }}
               className="mt-3"
             >

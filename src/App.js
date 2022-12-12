@@ -29,7 +29,11 @@ import PageNotFound from "./views/PageNotFound";
 
 const App = () => {
   const dispatch = useDispatch();
-
+  setTimeout(() => {
+    alert(
+      "Please waiting 10s since server being loaded, I am really apologize for this inconvenient!"
+    );
+  }, 1000);
   useEffect(() => {
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (token) dispatch(fetchMe);
@@ -48,7 +52,12 @@ const App = () => {
           redirectPath="/projects"
           layout={AuthLayout}
         />
-        <AuthRoute path="/register" exact component={Signup} redirectPath="/projects" />
+        <AuthRoute
+          path="/register"
+          exact
+          component={Signup}
+          redirectPath="/projects"
+        />
         <PrivateRoute
           path="/projects"
           exact
