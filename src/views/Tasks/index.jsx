@@ -82,7 +82,7 @@ const Tasks = (props) => {
       });
     }
 
-    if (taskError === "User is unthorization!") {
+    if (taskError === "User is authorization!") {
       Modal.warning({
         title: taskError,
         content: "You are not the owner of this project",
