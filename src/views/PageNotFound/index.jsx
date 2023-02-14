@@ -7,7 +7,7 @@ const PageNotFound = () => {
     <Result
       status="404"
       title="404"
-      subTitle="Sorry, the page you visited does not exist."
+      subTitle="Sorry, the function is being updated. It's coming soon"
       extra={
         <Link
           to="/projects"

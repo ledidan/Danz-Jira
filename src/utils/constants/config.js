@@ -1,5 +1,5 @@
 export const APP_NAME = "Jira";
-export const BASE_URL = "https://jira-nodejs.onrender.com";
+export const BASE_URL = "http://localhost:5500";
 export const USER_LOGIN = "USER_LOGIN";
 export const ACCESS_TOKEN = "Authorization";
 export const TOKEN_CYBERSOFT =

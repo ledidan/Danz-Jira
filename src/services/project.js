@@ -7,7 +7,7 @@ export const createProjectSchema = yup.object().shape({
     .number()
     .required("Project category is required")
     .min(1, "Project category is required")
-    .max(3, "Project category is required"),
+    .max(4, "Project category is required"),
 });
 
 class ProjectService {

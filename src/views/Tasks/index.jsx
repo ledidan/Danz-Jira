@@ -270,7 +270,7 @@ const Tasks = (props) => {
                 <div className="bg-gray-100 w-full h-full p-2 rounded flex flex-col">
                   <TaskListTitle title={listTaskItem.statusName} />
 
-                  <Droppable droppableId={listTaskItem.statusId}>
+                  <Droppable droppableId={listTaskItem.statusId.toString()}>
                     {(provided) => {
                       return (
                         <div

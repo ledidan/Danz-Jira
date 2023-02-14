@@ -1,15 +1,10 @@
 import axios from "axios";
-import {
-  ACCESS_TOKEN,
-  BASE_URL,
-  TOKEN_CYBERSOFT,
-} from "../utils/constants/config";
+import { ACCESS_TOKEN, BASE_URL } from "../utils/constants/config";
 
 // Set up default config for http requests
 const axiosClient = axios.create({
   baseURL: BASE_URL,
   headers: {
-    TokenCybersoft: TOKEN_CYBERSOFT,
     Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
   },
 });
