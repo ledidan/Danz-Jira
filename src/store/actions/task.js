@@ -68,7 +68,7 @@ export const createTaskForm = (data) => {
       dispatch(createAction(actionType.HIDE_DRAWER));
     } catch (err) {
       console.log(err);
-      notifitying("warning", "Task failed to be created");
+      notifitying("warning", "Denied Permission");
       dispatch(createAction(actionType.HIDE_DRAWER));
     }
   };
