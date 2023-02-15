@@ -30,15 +30,40 @@ export const deleteUser = (id) => {
   };
 };
 
+// export const getMembersByProjectId = (id) => {
+//   return async (dispatch) => {
+//     try {
+//       const res = await userService.getMembersByProjectId(id);
+
+//       dispatch(createAction(actionType.GET_PROJECT_MEMBERS, res.data.content));
+//     } catch (err) {
+//       dispatch(createAction(actionType.GET_PROJECT_MEMBERS, []));
+//       console.log(err);
+//       throw new Error("Failed to fetch project members");
+//     }
+//   };
+// };
+// Create a cache object to store the fetched data
+
 export const getMembersByProjectId = (id) => {
+  const memberCache = {};
   return async (dispatch) => {
     try {
-      const res = await userService.getMembersByProjectId(id);
+      let res;
+      // Check if the data is already in the cache
+      if (memberCache[id]) {
+        res = memberCache[id];
+      } else {
+        // Fetch the data from the server
+        res = await userService.getMembersByProjectId(id);
+        // Cache the data
+        memberCache[id] = res;
+      }
 
       dispatch(createAction(actionType.GET_PROJECT_MEMBERS, res.data.content));
     } catch (err) {
-      dispatch(createAction(actionType.GET_PROJECT_MEMBERS, []));
       console.log(err);
+      throw new Error("Failed to fetch project members");
     }
   };
 };

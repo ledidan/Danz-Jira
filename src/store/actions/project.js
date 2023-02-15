@@ -57,6 +57,7 @@ export const fetchUsersByProject = (projectId) => {
         err.response.data.content === "User not found in the project!"
       ) {
         dispatch(createAction(actionType.SET_PROJECT_MEMBERS, []));
+        throw new Error("Failed to fetch project members");
       }
     }
   };
