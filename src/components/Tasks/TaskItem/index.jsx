@@ -8,7 +8,10 @@ import { ReactComponent as BugIcon } from "../../../assets/images/icons/bug.svg"
 
 const TaskItem = ({ listTaskDetailItem, index, onClick }) => {
   return (
-    <Draggable draggableId={listTaskDetailItem.taskId.toString()} index={index}>
+    <Draggable
+      draggableId={listTaskDetailItem?.taskId.toString()}
+      index={index}
+    >
       {(provided) => {
         return (
           <div
