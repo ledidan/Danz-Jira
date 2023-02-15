@@ -1,9 +1,9 @@
 import axios from "axios";
-import { ACCESS_TOKEN, BASE_URL } from "../utils/constants/config";
+import { ACCESS_TOKEN } from "../utils/constants/config";
 
 // Set up default config for http requests
 const axiosClient = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.REACT_APP_SERVER_URL,
   headers: {
     Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
   },
