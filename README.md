@@ -1,4 +1,4 @@
-# FE70 - Jira Clone Project
+# FE70 - Fira Project
 
 ### [Di Dan](https://github.com/ledidan)
 
