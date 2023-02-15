@@ -31,34 +31,63 @@
 ## Folder Structure
 
 ```
-./src
-|___assets
-|   |___img
-|   |___...
-|___components
-|   |___ComponentA
-|   |   |___index.jsx
-|   |   |___[name].module.css
-|   |___...
-|___HOCs
-|   |___layouts
-|   |   |___Auth
-|   |   |___Main
-|   |   |___...
-|___services
-|   |___axiosClient.js
-|   |___auth.js
-|   |___index.js
-|   |___...
-|___store
-|   |___actions
-|   |   |___auth.js
-|   |   |___index.js
-|   |   |___type.js
-|   |___reducers
-|   |   |___auth.js
-|   |___index.js
-|___utils
-|___views
+.
+├── README.md
+├── craco.config.js
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src
+│   ├── App.js
+│   ├── App.test.js
+│   ├── HOCs
+│   │   ├── DrawerModalPopup
+│   │   ├── Route
+│   │   └── layouts
+│   ├── assets
+│   │   └── images
+│   ├── components
+│   │   ├── Comments
+│   │   ├── Projects
+│   │   ├── Tasks
+│   │   ├── UI
+│   │   └── Users
+│   ├── index.css
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   ├── services
+│   │   ├── auth.js
+│   │   ├── axiosClient.js
+│   │   ├── comment.js
+│   │   ├── index.js
+│   │   ├── priority.js
+│   │   ├── project.js
+│   │   ├── schemaContent.js
+│   │   ├── status.js
+│   │   ├── task.js
+│   │   └── user.js
+│   ├── setupTests.js
+│   ├── store
+│   │   ├── actions
+│   │   ├── index.js
+│   │   └── reducers
+│   ├── utils
+│   │   ├── constants
+│   │   └── notification.js
+│   └── views
+│       ├── Login
+│       ├── MyProfile
+│       ├── PageNotFound
+│       ├── Projects
+│       ├── Signup
+│       ├── Tasks
+│       └── Users
+└── tailwind.config.js
 
 ```
